@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip Game</title>
+  </head>
+  <body>
+    <p>Coin Flip Game</p>
+
+    <button
+      onclick="
+      randomNumber = Math.random();
+      console.log(randomNumber);
+      randomNumber <= 0.5 ? resultGame = 'Heads' : resultGame = 'Tails';
+      alert(resultGame);
+    "
+    >
+      Flip Coin
+    </button>
+
+    <p>
+      <button
+        onclick="
+          guess = 'Heads';
+          randomNumber = Math.random();
+          console.log(randomNumber);
+          randomNumber <= 0.5 ? resultGame = 'Heads' : resultGame = 'Tails';
+          resultGame === guess ? alert('You win!') : alert('You lose!');
+        "
+      >
+        Guess Heads
+      </button>
+
+      <button
+        onclick="
+        guess = 'Tails';
+        randomNumber = Math.random();
+        console.log(randomNumber);
+        randomNumber <= 0.5 ? resultGame = 'Heads' : resultGame = 'Tails';
+        resultGame === guess ? alert('You win!') : alert('You lose!');
+      "
+      >
+        Guess Tails
+      </button>
+    </p>
+
+    <script>
+      let randomNumber = 0;
+      let resultGame = "";
+      let guess = "";
+    </script>
+  </body>
+</html>
