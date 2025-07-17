@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+    <h1>Temperature Converter</h1>
+    <button
+      onclick="
+      convertToFahrenheit(prompt('Celsius: ...'));
+    "
+    >
+      Celsius to Fahrenheit
+    </button>
+
+    <button
+      onclick="
+      convertToCelsius(prompt('Fahrenheit: ...'));
+    "
+    >
+      Fahrenheit to Celsius
+    </button>
+
+    <p>
+      <button
+        onclick="
+          convertTemperature(prompt('Degrees:'), prompt('Unit:'));
+        "
+      >
+        Temperature Converter
+      </button>
+    </p>
+
+    <script>
+      console.log("Bismillah");
+      //prompt("isi di sini");
+
+      function convertToFahrenheit(celsius) {
+        //console.log(celsius);
+        const fahrenheit = (celsius * 9) / 5 + 32;
+        alert(`Fahrenheit: ${fahrenheit} °F`);
+      }
+
+      function convertToCelsius(fahrenheit) {
+        const celsius = ((fahrenheit - 32) * 5) / 9;
+        alert(`Celsius: ${celsius} °C`);
+      }
+
+      function convertTemperature(degrees, unit) {
+        console.log(`${degrees} °${unit}`);
+
+        if (unit === "c" || unit === "C" || unit === "Celsius" || unit === "celsius") {
+          const fahrenheit = (degrees * 9) / 5 + 32;
+          alert(`Fahrenheit: ${fahrenheit} °F`);
+        } else if (unit === "F" || unit === "f" || unit === "Fahrenheit" || unit === "fahrenheit") {
+          const celsius = ((degrees - 32) * 5) / 9;
+          alert(`Celsius: ${celsius} °C`);
+        }
+      }
+    </script>
+  </body>
+</html>
