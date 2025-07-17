@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Length Converter</title>
+  </head>
+  <body>
+    <h1>Length Converter</h1>
+
+    <button
+      onclick="
+      convertLength(prompt('Length:'), prompt('from km/miles:'), prompt('to'));
+    "
+    >
+      Length Converter
+    </button>
+
+    <button
+      onclick="
+      convertLengthV2(prompt('Length:'), prompt('from km/miles/ft:'), prompt('to'));
+    "
+    >
+      Length Converter v2
+    </button>
+
+    <script>
+      console.log("Bismillah");
+
+      function convertLength(length, from, to) {
+        if (from === "km" && to === "miles") {
+          const mile = length / 1.6;
+          alert(`Length: ${mile} miles`);
+        } else if (from === "miles" && to === "km") {
+          const km = length * 1.6;
+          alert(`Length: ${km} km`);
+        } else {
+          alert(`Length: ${length} ${from}`);
+        }
+      }
+
+      function convertLengthV2(length, from, to) {
+        if (from === "miles") {
+          if (to === "km") {
+            const km = length * 1.6;
+            alert(`Length: ${km} km`);
+          } else if (to === "ft") {
+            const ft = length * 5280;
+            alert(`Length: ${ft} ft`);
+          }
+        } else if (from === "km") {
+          if (to === "miles") {
+            const mile = length / 1.6;
+            alert(`Length: ${mile} miles`);
+          } else if (to === "ft") {
+            const ft = length * 3281;
+            alert(`Length: ${ft} ft`);
+          }
+        } else if (from === "ft") {
+          if (to === "miles") {
+            const mile = length / 5280;
+            alert(`Length: ${mile} miles`);
+          } else if (to === "km") {
+            const km = length / 3281;
+            alert(`Length: ${km} km`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
