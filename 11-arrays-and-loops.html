@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <p>Learning 11</p>
+
+    <script>
+      console.log("Bismillahirrahmanirrahim");
+
+      /*
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+      console.log(myArray[0]);
+
+      myArray[0] = 99;
+      console.log(myArray);
+
+      const myArray2 = [1, "hello", true, { name: "socks", price: 100 }, [1, 2, 3]];
+      console.log(myArray2);
+
+      console.log(typeof myArray2);
+      Array.isArray(myArray);
+      console.log(Array.isArray(myArray));
+
+      console.log(myArray2.length);
+      myArray2.push(100);
+      console.log(myArray2);
+
+      myArray2.splice(1, 2);
+      console.log(myArray2);
+      */
+
+      /*
+      //This is loops below (while loop)
+      let i = 1;
+      while (i <= 5) {
+        console.log(i);
+        i++;
+      }
+
+      // "for loop"
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+
+      // standard loop ==> for loop
+      // non-standard/complex loop ===> while loop
+
+      let randomNumber = 0;
+      while (randomNumber < 0.5) {
+        randomNumber = Math.random();
+      }
+
+      console.log(randomNumber);
+      */
+
+      const todoList = ["make dinner", "wash dishes", "watch youtube"];
+
+      let i = 0;
+      while (i <= 2) {
+        console.log(todoList[i]);
+        i++;
+      }
+
+      for (let index = 0; index < todoList.length; index++) {
+        const value = todoList[index];
+        console.log(value);
+      }
+
+      const myArray3 = [1, 1, 3];
+      let ima3 = 0;
+      let total = 0;
+      while (ima3 < myArray3.length) {
+        total = total + myArray3[ima3];
+        ima3++;
+      }
+      console.log(total);
+
+      const doubleMyArray3 = [];
+      for (let idma3 = 0; idma3 < myArray3.length; idma3++) {
+        const value = myArray3[idma3] * 2;
+        doubleMyArray3.push(value);
+      }
+      console.log(doubleMyArray3);
+    </script>
+  </body>
+</html>
