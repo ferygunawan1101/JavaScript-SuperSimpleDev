@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe Button</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .subscribe-button {
+        border: none;
+        color: white;
+        background-color: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .is-subscribed {
+        color: black;
+        background-color: rgb(221, 221, 221);
+      }
+    </style>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+
+    <button class="js-subscribe-button subscribe-button" onclick="clickSubsButton()">Subscribe</button>
+
+    <script>
+      console.log("Bismillah");
+
+      function clickSubsButton() {
+        //console.log("click...");
+        const subsButtonElement = document.querySelector(".js-subscribe-button");
+        //console.log(subsButtonElement);
+
+        if (subsButtonElement.innerText === "Subscribe") {
+          subsButtonElement.innerText = "Subscribed";
+          subsButtonElement.classList.add("is-subscribed");
+        } else {
+          subsButtonElement.innerText = "Subscribe";
+          subsButtonElement.classList.remove("is-subscribed");
+        }
+      }
+    </script>
+  </body>
+</html>

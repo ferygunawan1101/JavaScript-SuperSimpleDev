@@ -4,15 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon Shipping</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .input {
+        font-size: 15px;
+        padding: 15px 10px;
+        width: 300px;
+      }
+
+      .calculate-button {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 17px 25px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .calculate-button:active {
+        background-color: rgb(0, 208, 0);
+      }
+    </style>
   </head>
   <body>
     <h1>Amazon Shipping Calculator</h1>
     <p>Orders under $40 = + $10 shipping.</p>
     <p>Orders over $40 = FREE shipping.</p>
 
-    <input type="text" placeholder="Cost of order" class="js-input" onkeydown="enterKey()" />
+    <input type="text" placeholder="Cost of order" class="js-input input" onkeydown="enterKey()" />
 
-    <button class="js-calculate-button" onclick="clickCalculate()">Calculate</button>
+    <button class="js-calculate-button calculate-button" onclick="clickCalculate()">Calculate</button>
 
     <p class="js-total"></p>
 
