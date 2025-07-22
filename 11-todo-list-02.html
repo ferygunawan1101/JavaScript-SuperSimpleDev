@@ -17,13 +17,7 @@
     <script>
       console.log("Bismillah");
 
-      const todoList = ["sa tu", "du a", "ti ga"];
-      const todoListHtml = [];
-
-      for (let i = 0; i < todoList.length; i++) {
-        const value = todoList[i];
-        console.log(value);
-      }
+      const todoList = [];
 
       function clickAdd() {
         const inputElement = document.querySelector(".js-input");
@@ -35,14 +29,16 @@
         }
         console.log(todoList);
 
+        let todoListHtml = "";
+
         for (let i = 0; i < todoList.length; i++) {
-          //console.log(todoList[i]);
-          const value = todoList[i];
+          const todo = todoList[i];
+          const todoHtml = `<p>${todo}</p>`;
 
-          const valueHtml = `<p>${value}</p>`;
-          console.log(valueHtml);
+          todoListHtml += todoHtml;
+          console.log(todoListHtml);
 
-          document.querySelector(".js-div-todo").innerHTML = valueHtml;
+          document.querySelector(".js-div-todo").innerHTML = todoListHtml;
         }
       }
 
