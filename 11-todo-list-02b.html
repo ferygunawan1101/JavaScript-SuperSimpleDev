@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <p>Todo list Practice 2</p>
+    <p>The Second</p>
+
+    <input type="text" name="" id="" placeholder="Todo name" class="js-input-todo" onkeydown="enterKey()" />
+
+    <button onclick="clickAddTodo()">Add</button>
+
+    <div class="js-div-todo"></div>
+
+    <script>
+      console.log("Bismillah");
+
+      const todoList = [];
+
+      function clickAddTodo() {
+        const inputElement = document.querySelector(".js-input-todo");
+        const todoName = inputElement.value;
+
+        if (inputElement.value) {
+          todoList.push(todoName);
+          inputElement.value = "";
+        }
+        //console.log(todoList);
+
+        let todoListHtml = "";
+        for (let i = 0; i < todoList.length; i++) {
+          const todo = todoList[i];
+          let todoHtml = `<p>${todo}</p>`;
+          todoListHtml += todoHtml;
+        }
+        //console.log(todoListHtml);
+
+        document.querySelector(".js-div-todo").innerHTML = todoListHtml;
+      }
+
+      function enterKey() {
+        if (event.key === "Enter") {
+          clickAddTodo();
+        }
+      }
+    </script>
+  </body>
+</html>
