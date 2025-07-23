@@ -38,7 +38,7 @@
 
       let todoList = [];
       let todoListDate = [];
-      let arrDel = [];
+      //let arrDel = [];
 
       function clickAddTodo() {
         const todoElement = document.querySelector(".js-input-todo");
@@ -50,14 +50,24 @@
         if (todoElement.value && dateElement.value) {
           todoList.push(todoName);
           todoListDate.push(todoDate);
-          arrDel.push("DELETE");
+          //arrDel.push("DELETE");
           todoElement.value = "";
           dateElement.value = "";
         }
         console.log(todoList);
         console.log(todoListDate);
-        console.log(arrDel);
+        //console.log(arrDel);
 
+        renderTodoList();
+      }
+
+      function enterKey() {
+        if (event.key === "Enter") {
+          clickAddTodo();
+        }
+      }
+
+      function renderTodoList() {
         let todoHtml = "";
         //let dateHtml = "";
         //let delHtml = "";
@@ -65,7 +75,7 @@
           //todoHtml += `<p>${todoList[i]}</p>`;
           //dateHtml += `<p>${todoListDate}</p>`;
           //delHtml += "<button>DELETE</button>";
-          todoHtml += `<div>${todoList[i]}</div><div>${todoListDate[i]}</div><div><button onclick="deleteTodoList()">${arrDel[i]}</button></div>`;
+          todoHtml += `<div>${todoList[i]}</div><div>${todoListDate[i]}</div><div><button onclick="todoList.splice(${i},1); todoListDate.splice(${i}, 1); renderTodoList()">DELETE</button></div>`;
         }
         console.log(todoHtml);
         //console.log(dateHtml);
@@ -77,19 +87,6 @@
         //document.querySelector(".js-div-del").innerHTML = delHtml;
 
         document.querySelector(".js-div").innerHTML = todoHtml;
-      }
-
-      function enterKey() {
-        if (event.key === "Enter") {
-          clickAddTodo();
-        }
-      }
-
-      function deleteTodoList() {
-        if (arrDel[i]) {
-          todoList[i] = "";
-          todoListDate[i] = "";
-        }
       }
     </script>
   </body>
