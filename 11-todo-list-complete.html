@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+
+    <div>
+      <input type="text" name="" id="" placeholder="Name todo" class="js-todo-input" />
+
+      <input type="date" class="js-date-input" />
+
+      <button class="" onclick="clickAdd()">Add</button>
+    </div>
+
+    <div class="js-output-todo-list" style="display: grid; grid-template-columns: 200px 150px 100px"></div>
+
+    <script>
+      let todoList = [];
+
+      function clickAdd() {
+        const inputElement = document.querySelector(".js-todo-input");
+        const inputDateElement = document.querySelector(".js-date-input");
+
+        let name = inputElement.value;
+        let date = inputDateElement.value;
+
+        if (inputElement.value && inputDateElement.value) {
+          todoList.push({ name, date });
+          inputElement.value = "";
+          inputDateElement.value = "";
+        }
+        console.log(todoList);
+
+        renderTodoList();
+      }
+
+      function renderTodoList() {
+        let todoListHTML = "";
+
+        for (let i = 0; i < todoList.length; i++) {
+          const { name, date } = todoList[i];
+          //console.log(`${name}, ${date}`);
+
+          let html = `
+            <div>${name}</div>
+            <div>${date}</div>
+            <button onclick="todoList.splice(${i},1); renderTodoList();">DELETE</button>
+            `;
+
+          todoListHTML += html;
+        }
+
+        console.log(todoListHTML);
+
+        document.querySelector(".js-output-todo-list").innerHTML = todoListHTML;
+      }
+    </script>
+  </body>
+</html>
