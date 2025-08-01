@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array and Loop Exercises 2</title>
+  </head>
+  <body>
+    <p>Array and loop exercises 2</p>
+    <p>Look at the console</p>
+
+    <script>
+      console.log("Bismillah");
+
+      //11o loop over the array
+      function search(array) {
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+
+          if (value === "search") {
+            console.log(i);
+            break;
+          } else if (array[array.length - 1] !== "search") {
+            console.log(-1);
+            break;
+          }
+        }
+      }
+
+      search(["hello", "hi", "world", "good", "search"]);
+      search(["not", "found"]);
+
+      //11q
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+
+          if (value === word) {
+            console.log(i);
+            break;
+          } else if (array[array.length - 1] !== word) {
+            console.log(-1);
+            break;
+          }
+        }
+      }
+
+      findIndex(["green", "red", "blue", "red"], "red");
+      findIndex(["green", "red", "blue", "red"], "yellow");
+    </script>
+  </body>
+</html>
