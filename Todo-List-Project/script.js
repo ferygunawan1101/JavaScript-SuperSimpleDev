@@ -3,6 +3,10 @@ console.log("By Fery Gunawan Sugiarto, 01/08/2025");
 
 let todoList = JSON.parse(localStorage.getItem("todoListSave")) || [];
 
+renderTodoList();
+
+//alert("Apa kamu yakin?");
+
 function clickAdd() {
   const inputElement = document.querySelector(".js-todo-input");
   const dateInputElement = document.querySelector(".js-date-input");
