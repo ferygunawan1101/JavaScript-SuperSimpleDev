@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <h1>Advanced Functions</h1>
+
+    <script>
+      console.log("Bismillah");
+      console.log("By Fery G, 02/08/2025");
+
+      //Funtions are values, wee can save it in a variable
+      const function1 = function greeting() {
+        console.log("hello world!");
+      };
+
+      console.log(function1);
+      console.log(typeof function1);
+
+      //Run the function inside variable, by calling the variable
+      function1();
+
+      //Anonymous Function: Function without a name
+      const function2 = function () {
+        console.log("Hello world 2!");
+      };
+
+      function2();
+
+      //Funtions as variable, can saved in an object
+      const object1 = {
+        name: "fulan",
+        fun: function greeting3() {
+          console.log("hello3");
+        },
+      };
+
+      object1.fun();
+      //line above called "Method", a functions inside an object
+
+      //Passing a value into a funtions
+      function display(parameter) {
+        console.log(parameter);
+      }
+
+      display("Hello world 123");
+
+      //Passing a function into a functions, A Callback function
+      function run(parameter) {
+        parameter();
+      }
+
+      run(function greeting4() {
+        console.log("hello 4");
+      });
+
+      //Asynchronous code, setTimeout() and setInterval()
+      //input 2 parameter, a funcion and time in millisecond
+
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000);
+
+      console.log("next line");
+
+      /*
+      setInterval(function () {
+        console.log("interval");
+      }, 5000);
+      */
+
+      console.log("next line 2");
+    </script>
+  </body>
+</html>
