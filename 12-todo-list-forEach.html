@@ -55,14 +55,17 @@
 
       function renderTodoList() {
         let todoListHTML = "";
-        todoList.forEach(function ({ todoName, todoDate }, i) {
+        todoList.forEach(({ todoName, todoDate }, i) => {
           //console.log(i);
           //console.log(todoName);
           //console.log(todoDate);
           let html = `
             <div>${todoName}</div>
             <div>${todoDate}</div>
-            <button>Delete</button>
+            <button onclick="
+              todoList.splice(${i},1);
+              renderTodoList();
+            ">Delete</button>
           `;
           //console.log(html);
           todoListHTML += html;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge Exercises 12</title>
+  </head>
+  <body>
+    <h1>Challenge Exercises 12</h1>
+    <div>
+      <button onclick="addToCart()">Add to cart</button>
+      <p class="js-text"></p>
+    </div>
+
+    <script>
+      console.log("Bismillah \nBy Fery Gunawan 04/08/2025");
+
+      let isSetTimeout = false;
+      let setTimeoutId;
+
+      function addToCart() {
+        document.querySelector(".js-text").innerHTML = "Added";
+
+        if (isSetTimeout === false) {
+          setTimeoutId = setTimeout(function () {
+            document.querySelector(".js-text").innerHTML = "";
+          }, 5000);
+          isSetTimeout = true;
+        } else if (isSetTimeout === true) {
+          setTimeoutId = clearTimeout();
+          setTimeout(function () {
+            document.querySelector(".js-text").innerHTML = "";
+          }, 5000);
+          isSetTimeout = false;
+        }
+      }
+    </script>
+  </body>
+</html>

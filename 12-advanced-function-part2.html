@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Function pt.2</title>
+  </head>
+  <body>
+    <p>Advanced Function pt.2</p>
+
+    <button onclick="" class="js-click-button">Click</button>
+
+    <script>
+      console.log("Bismillah");
+
+      const regularFunction = function (parameter, parameter2) {
+        console.log("hello");
+        return 5;
+      };
+
+      //Arrow Function
+      const arrowFunction = (parameter, parameter2) => {
+        console.log("hello");
+        return 5;
+      };
+
+      regularFunction();
+      console.log(regularFunction());
+
+      arrowFunction();
+      console.log(arrowFunction());
+
+      //One parameter
+      const oneParameter = (parameter) => {
+        console.log(parameter + 3);
+      };
+      oneParameter(7);
+
+      //One Line
+      const oneLine = () => 3 + 11;
+
+      console.log(oneLine());
+
+      //application
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
+        console.log(`${index}, ${value}`);
+      });
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach((value, index) => {
+        console.log(`${index}, ${value}`);
+      });
+
+      //Use arrow function, when passing funtion into another function
+
+      const object = {
+        method: () => {},
+
+        method2() {},
+      };
+
+      //learn document.querySelector().addEventListener();
+      //benefit: multiple event listener for one event
+      const clickButtonElement = document.querySelector(".js-click-button");
+
+      clickButtonElement.addEventListener("click", () => {
+        console.log("clicking ...");
+      });
+
+      clickButtonElement.addEventListener("click", () => {
+        console.log("asking ...");
+      });
+
+      //we can remove event listener, .removeEventListener()
+
+      const eventListener = () => {
+        console.log("review ...");
+      };
+
+      clickButtonElement.addEventListener("click", eventListener);
+
+      clickButtonElement.removeEventListener("click", eventListener);
+
+      // keydown
+      document.body.addEventListener("keydown", (event) => {
+        console.log(event.key);
+      });
+    </script>
+  </body>
+</html>

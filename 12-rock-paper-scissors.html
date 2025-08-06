@@ -165,8 +165,28 @@
       let intervalId;
 
       function clickAutoPlay() {
+        /*
         if (!isAutoPlaying) {
           intervalId = setInterval(function autoPlay() {
+            let randomNumber = 0;
+            randomNumber = Math.random();
+            if (randomNumber >= 0 && randomNumber < 1 / 3) {
+              playGame("rock");
+            } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+              playGame("paper");
+            } else if (randomNumber >= 2 / 3) {
+              playGame("scissors");
+            }
+          }, 1000);
+          isAutoPlaying = true;
+        } else {
+          clearInterval(intervalId);
+          isAutoPlaying = false;
+        }
+        */
+
+        if (!isAutoPlaying) {
+          intervalId = setInterval(() => {
             let randomNumber = 0;
             randomNumber = Math.random();
             if (randomNumber >= 0 && randomNumber < 1 / 3) {
