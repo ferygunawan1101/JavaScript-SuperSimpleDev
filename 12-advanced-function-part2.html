@@ -81,8 +81,8 @@
 
       clickButtonElement.removeEventListener("click", eventListener);
 
-      // keydown
-      document.body.addEventListener("keydown", (event) => {
+      // keydown, keyup
+      document.body.addEventListener("keydown", () => {
         console.log(event.key);
       });
     </script>
