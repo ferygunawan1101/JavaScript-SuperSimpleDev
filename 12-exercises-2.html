@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises 12</title>
+</head>
+<body>
+  <h1>Exercises 12 try 2</h1>
+
+  <button class="js-start-button" onclick="clickStart()">
+    Start
+  </button>
+
+  <button class="js-start-2" onclick="clickStart2()">
+    Start 2
+  </button>
+
+  <div style="margin-top: 10px;">
+    <button onclick="addToCart()">
+      Add to cart
+    </button>
+    <p class="js-added"></p>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <button onclick="addToCart2()">
+      Add to cart (2)
+    </button>
+    <p class="js-added-2"></p>
+  </div>
+  
+  <script>
+    console.log("Bismillah");
+
+    //12a
+    const add = function() {
+      console.log(2 + 3);
+    }
+
+    add();
+    add();
+
+    //12b
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function() {
+      console.log('12b');
+    });
+
+    runTwice(add);
+
+    //12c
+    function clickStart() {
+      const startButtonElement = document.querySelector('.js-start-button');
+
+      setTimeout(() => {
+        document.querySelector('.js-start-button')
+          .innerHTML = 'Finished!';
+      }, 1000);
+    }
+
+    //12d
+    function clickStart2() {
+      document.querySelector('.js-start-2')
+        .innerHTML = 'Loading ...';
+
+      setTimeout(() => {
+        document.querySelector('.js-start-2')
+          .innerHTML = 'Finished!';
+      }, 1000);
+    }
+
+    //12e
+    function addToCart() {
+      document.querySelector('.js-added')
+        .innerHTML = 'Added';
+      
+      setTimeout(() => {
+        document.querySelector('.js-added')
+          .innerHTML = '';
+      }, 2000);
+    }
+
+    //12f
+    let isAdded = false;
+    let timeoutId;
+
+    function addToCart2() {
+      document.querySelector('.js-added-2')
+        .innerHTML = 'Added';
+      
+      if (!isAdded) {
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          document.querySelector('.js-added-2')
+            .innerHTML = '';
+        }, 2000);
+
+        isAdded = true;
+      } else {
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          document.querySelector('.js-added-2')
+            .innerHTML = '';
+        }, 2000);
+
+        isAdded = false;
+      }
+
+    }
+
+    //12g
+    
+    function g12() {
+      setInterval(() => {
+        document.title = '(2) new massages';
+      }, 1000);
+    }
+    g12();
+    
+
+    console.log(document.title);
+    
+
+  </script>
+</body>
+</html>
